@@ -1,6 +1,6 @@
 
 resource "aws_instance" "jon_linux_box" {
-  ami           = "ami-04a81a99f5ec58529"
+  ami           = "ami-04a81a99f5ec58529" #free tier linux ami
   instance_type = "t2.micro"
 
   tags = {
@@ -9,7 +9,7 @@ resource "aws_instance" "jon_linux_box" {
 }
 
 resource "aws_instance" "jon_windows_box" {
-  ami           = "ami-07d9456e59793a7d5"
+  ami           = "ami-07d9456e59793a7d5" #free tier windows ami
   instance_type = "t2.micro"
 
   tags = {
