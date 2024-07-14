@@ -1,8 +1,9 @@
 terraform {
   cloud {
-    organization = "organization-name"
+    organization = "jontehashi"
+
     workspaces {
-      name = "learn-terraform-aws"
+      name = "jontehashi_1"
     }
   }
 
