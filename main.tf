@@ -1,7 +1,16 @@
+import {
+  to = aws_vpc.main
+  id = "vpc-05709341c9dbaafc5"
+}
+
+resource "aws_vpc" "main" {
+  
+}
 
 resource "aws_instance" "jon_linux_box" {
   ami           = "ami-04a81a99f5ec58529" #free tier linux ami
   instance_type = "t2.micro"
+  vpc_security_group_ids = [ aws_security_group.allows_linux_traffic.id ]
 
   tags = {
     Name = "Jon's linux"
@@ -15,4 +24,27 @@ resource "aws_instance" "jon_windows_box" {
   tags = {
     Name = "Jon's windows"
   }
+}
+
+resource "aws_security_group" "allows_linux_traffic" {
+  name        = "allow_traffic"
+  description = "Allow TLS inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.main.id
+
+  tags = {
+    Name = "allow_traffic"
+  
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "llow_all_traffic_ipv4" {
+  security_group_id = aws_security_group.allows_linux_traffic.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" 
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
+  security_group_id = aws_security_group.allows_linux_traffic.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" # semantically equivalent to all ports
 }

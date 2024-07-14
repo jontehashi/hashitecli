@@ -1,3 +1,8 @@
+output "imported_vpc_id" {
+  description = "The ID of the windows instance"
+  value       = aws_vpc.main.id
+}
+
 output "jon_linux_id" {
   description = "The ID of the linux EC2 instance"
   value       = aws_instance.jon_linux_box.id
