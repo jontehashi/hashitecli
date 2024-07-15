@@ -1,7 +1,7 @@
-import {
-  to = aws_vpc.main
-  id = "vpc-05709341c9dbaafc5"
-}
+# import {
+#   to = aws_vpc.main
+#   id = "vpc-05709341c9dbaafc5"
+# }
 
 resource "aws_vpc" "main" {
   #the vpc is imported in. 
