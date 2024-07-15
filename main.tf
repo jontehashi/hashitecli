@@ -13,7 +13,7 @@ resource "aws_instance" "jon_linux_box" {
   vpc_security_group_ids = [ aws_security_group.allows_linux_traffic.id ]
 
   tags = {
-    Name = "Jon's linux"
+    Name = "Jon's linux 23"
   }
 }
 
