@@ -5,11 +5,6 @@ import {
 
 resource "aws_vpc" "main" {
   #the vpc is imported in. 
-
-  lifecycle {
-   prevent_destroy = true #so I dont have to mess with the statefile before destroying to keep the VPC alive
- }
-
 }
 
 resource "aws_instance" "jon_linux_box" {
