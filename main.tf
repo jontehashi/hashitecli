@@ -4,7 +4,7 @@ import {
 }
 
 resource "aws_vpc" "main" {
-  
+  #the vpc is imported in. 
 }
 
 resource "aws_instance" "jon_linux_box" {
