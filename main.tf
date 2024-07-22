@@ -10,7 +10,7 @@ resource "aws_vpc" "maincli" {
 resource "aws_instance" "jon_linux_box_cli" {
   ami           = "ami-04a81a99f5ec58529" #free tier linux ami
   instance_type = "t2.micro"
-  vpc_security_group_ids = [ aws_security_group.allows_linux_traffic.id ]
+  vpc_security_group_ids = [ aws_security_group.allows_linux_traffic_cli ]
 
   tags = {
     Name = "Jon's linux 23"
