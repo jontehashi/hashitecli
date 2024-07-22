@@ -3,7 +3,7 @@ terraform {
     organization = "jontehashi"
 
     workspaces {
-      name = "jontehashi_1"
+      name = "jontehashi_1cli"
     }
   }
 

@@ -1,10 +1,10 @@
-# import {
-#   to = aws_vpc.main
-#   id = "vpc-05709341c9dbaafc5"
-# }
-
 resource "aws_vpc" "main" {
-  #the vpc is imported in. 
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "CLI_VPC"
+  }
 }
 
 resource "aws_instance" "jon_linux_box" {
