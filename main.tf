@@ -12,7 +12,7 @@ resource "aws_instance" "jon_linux_box_cli" {
   vpc_security_group_ids = [ aws_security_group.allows_linux_traffic_cli.id ]
 
   tags = {
-    Name = "Jon's linux 23"
+    Name = "Jon's linux 23 cli"
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_instance" "jon_windows_box_cli" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "Jon's windows"
+    Name = "Jon's windows cli"
   }
 }
 
