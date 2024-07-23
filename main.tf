@@ -6,11 +6,21 @@ resource "aws_vpc" "maincli" {
   }
 }
 
+resource "aws_subnet" "cli_subnet" {
+  vpc_id            = aws_vpc.my_vpc.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "us-east-1a"
+
+  tags = {
+    Name = "cli subnet"
+  }
+}
+
 resource "aws_instance" "jon_linux_box_cli" {
   ami           = "ami-04a81a99f5ec58529" #free tier linux ami
   instance_type = "t2.micro"
   vpc_security_group_ids = [ aws_security_group.allows_linux_traffic_cli.id ]
-
+  subnet_id = aws_subnet.cli_subnet.id
   tags = {
     Name = "Jon's linux 23 cli"
   }
@@ -19,6 +29,7 @@ resource "aws_instance" "jon_linux_box_cli" {
 resource "aws_instance" "jon_windows_box_cli" {
   ami           = "ami-07d9456e59793a7d5" #free tier windows ami
   instance_type = "t2.micro"
+  subnet_id = aws_subnet.cli_subnet.id
 
   tags = {
     Name = "Jon's windows cli"
