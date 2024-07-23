@@ -10,5 +10,5 @@ output "jon_linux_id" {
 
 output "jon_windows_id" {
   description = "The ID of the windows instance"
-  value       = aws_instance.jon_windows_box_cli
+  value       = aws_instance.jon_windows_box_cli.id
 }

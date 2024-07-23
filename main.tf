@@ -22,7 +22,7 @@ resource "aws_instance" "jon_linux_box_cli" {
   vpc_security_group_ids = [ aws_security_group.allows_linux_traffic_cli.id ]
   subnet_id = aws_subnet.cli_subnet.id
   tags = {
-    Name = "Jon's linux 23 cli"
+    Name = "Jon's linux cli"
   }
 }
 
