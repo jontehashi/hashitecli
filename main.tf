@@ -32,7 +32,7 @@ resource "aws_security_group" "allows_linux_traffic_cli" {
   vpc_id      = aws_vpc.maincli.id
 
   tags = {
-    Name = "allow_traffic"
+    Name = "allow_traffic_cli"
   
   }
 }
