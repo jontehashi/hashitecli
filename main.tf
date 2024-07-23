@@ -7,7 +7,7 @@ resource "aws_vpc" "maincli" {
 }
 
 resource "aws_subnet" "cli_subnet" {
-  vpc_id            = aws_vpc.my_vpc.id
+  vpc_id            = aws_vpc.maincli.id
   cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
 
